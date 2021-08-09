@@ -17,7 +17,7 @@ jobs:
       - name: Start selenium standalone
         run: |
           docker pull selenium/standalone-chrome
-          docker run -d -p4444:4444 selenium/standalone-firefox
+          docker run -d -p4444:4444 selenium/standalone-chrome
           docker ps
       - name: Install dependencies
         run: |
