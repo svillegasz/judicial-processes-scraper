@@ -18,6 +18,7 @@ jobs:
         run: |
           docker pull selenium/standalone-chrome
           docker run -d -p4444:4444 selenium/standalone-firefox
+          docker ps
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
