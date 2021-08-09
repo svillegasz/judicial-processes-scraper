@@ -22,6 +22,7 @@ Que tengas un feliz dia!"""
 context = ssl.create_default_context()
 
 def send_email(active_processes, failed_processes):
+    print("Gmail: sending gmail update")
     active_processes_message = ''
     for process in active_processes:
         active_processes += process + '\n'
@@ -34,3 +35,4 @@ def send_email(active_processes, failed_processes):
             user,
             receiver_email,
             message.format(active_processes=active_processes_message, failed_processes=failed_processes_message))
+        print('Gmail: email sent')
