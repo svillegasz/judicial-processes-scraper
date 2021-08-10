@@ -1,6 +1,8 @@
 name: Process verifier
-
-on: workflow_dispatch
+on:
+  schedule:
+    - cron:  '0 1 * * *'
+  workflow_dispatch:
 jobs:
   cron:
     runs-on: ubuntu-latest
