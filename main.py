@@ -3,7 +3,7 @@ from processparser import read_processes
 from gmail import send_email
 
 if __name__ == '__main__':
-    processes = read_processes('processes.xlsx')
+    processes = read_processes('processestest.xlsx')
     start_session()
     failed_processes = []
     active_processes = []
