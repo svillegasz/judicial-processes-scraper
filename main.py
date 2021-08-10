@@ -1,9 +1,10 @@
 from ramajudicial import verify_process, start_session, end_session
 from processparser import read_processes
 from gmail import send_email
+import traceback
 
 if __name__ == '__main__':
-    processes = read_processes('processestest.xlsx')
+    processes = read_processes('processes.xlsx')
     start_session()
     failed_processes = []
     active_processes = []
@@ -12,8 +13,8 @@ if __name__ == '__main__':
         try:
             if verify_process(process_id, process['city'], process['entity']):
                 active_processes.append(process_id)
-        except Exception as e:
+        except:
             failed_processes.append(process_id)
-            print(e)
+            traceback.print_exc()
     end_session()
     send_email(active_processes, failed_processes)

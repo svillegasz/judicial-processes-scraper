@@ -10,8 +10,6 @@ def read_processes(filename):
     for row in sheet.iter_rows(min_row=2, values_only=True):
         process_id = row[0]
         court = row[1]
-        if 'revisarlo en tribunal' in court.lower():
-            process_id = process_id[:-1] + '1'
         city, city_value = parse_to_city(court)
         entity = parse_to_entity(court, city)
         process = {
