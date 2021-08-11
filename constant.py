@@ -52,5 +52,11 @@ CITIES = {
             'CIRCUITO': '291-True-3103-66001-Juzgado de Circuito-Civil',
             'MUNICIPAL': '293-True-4003-66001-Juzgado Municipal-Civil'
         }
+    },
+    'RIONEGRO': {
+        'value': '05615',
+        'entities': {
+            'CIRCUITO': '252-True-3103-05615-Juzgado de Circuito-Civil'
+        }
     }
 }

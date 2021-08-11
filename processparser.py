@@ -1,9 +1,10 @@
 from openpyxl import load_workbook
-
 from constant import CITIES
 
+import logging
+
 def read_processes(filename):
-    print('Parser: reading processes from excel file')
+    logging.info('Parser: reading processes from excel file')
     workbook = load_workbook(filename=filename, read_only=True)
     sheet = workbook.active
     processes = []

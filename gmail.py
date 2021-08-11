@@ -1,4 +1,4 @@
-import smtplib, ssl, os
+import smtplib, ssl, os, logging
 
 port = 465
 smtp_server = "smtp.gmail.com"
@@ -22,7 +22,7 @@ Que tengas un feliz dia!"""
 context = ssl.create_default_context()
 
 def send_email(active_processes, failed_processes):
-    print("Gmail: sending gmail update")
+    logging.info("Gmail: sending gmail update")
     active_processes_message = ''
     for process in active_processes:
         active_processes_message += process + '\n'
@@ -37,4 +37,4 @@ def send_email(active_processes, failed_processes):
             message.format(
                 active_processes=active_processes_message if active_processes_message else 'No hay procesos activos!',
                 failed_processes=failed_processes_message if failed_processes_message else 'Todos los procesos se validaron exitosamente!'))
-        print('Gmail: email sent')
+        logging.info('Gmail: email sent')

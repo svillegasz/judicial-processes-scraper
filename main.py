@@ -1,9 +1,12 @@
 from ramajudicial import verify_process, start_session, end_session
 from processparser import read_processes
 from gmail import send_email
+
 import traceback
+import logging
 
 if __name__ == '__main__':
+    logging.getLogger().setLevel(logging.INFO)
     processes = read_processes('processes.xlsx')
     start_session()
     failed_processes = []
@@ -15,6 +18,6 @@ if __name__ == '__main__':
                 active_processes.append(process_id)
         except:
             failed_processes.append(process_id)
-            traceback.print_exc()
+            logging.exception('Error processing process {id}'.format(id=process_id))
     end_session()
     send_email(active_processes, failed_processes)
