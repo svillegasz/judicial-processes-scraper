@@ -7,9 +7,9 @@ jobs:
   cron:
     runs-on: ubuntu-latest
     env:
-      GMAIL_USER: ${{secret.GMAIL_USER}}
-      GMAIL_PASSWORD: ${{secret.GMAIL_PASSWORD}}
-      RECEIVER_EMAIL:  ${{secret.RECEIVER_EMAIL}}
+      GMAIL_USER: ${{secrets.GMAIL_USER}}
+      GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+      RECEIVER_EMAIL:  ${{secrets.RECEIVER_EMAIL}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
