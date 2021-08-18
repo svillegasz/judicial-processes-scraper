@@ -20,4 +20,6 @@ if __name__ == '__main__':
             failed_processes.append(process_id)
             logging.exception('Error processing process {id}'.format(id=process_id))
     end_session()
+    logging.info('Active processes: {p}'.format(p=active_processes))
+    logging.info('Failed processes: {p}'.format(p=failed_processes))
     send_email(active_processes, failed_processes)
